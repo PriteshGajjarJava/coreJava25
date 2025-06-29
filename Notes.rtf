@@ -1,0 +1,172 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red41\green0\blue130;}
+{\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh21600\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs68 \cf0 												                                Core Java
+\f1\b0 		\
+	- Java is OOP language	\
+	- Current version is 24.\
+	- We should be using LTS version. 21, 17, 11, 8\
+\
+Steps of java code:\
+- Create a file with extension \'93.java\'94 (e.g. SayWelcome.java)\
+- For compilation use \'93
+\f0\b \cf2 javac
+\f1\b0 \cf0  <file-name>\'94.  e.g. #javac SayWelcome.java \
+- If program is successfully complied, it will generate a byte code in file with extension \'93.class\'94 \
+- To run java program use \'93
+\f0\b \cf2 java
+\f1\b0 \cf0 \'94 command.  e.g. #java SayWelcome \
+\
+JDK - Java Development Kit\
+JRE - Java Runtime Environment\
+JVM - Java Virtual Machine \
+\
+We have to download JDK. \
+\
+\
+
+\f0\b Java is Platform independent language:\
+
+\f1\b0 \
+ In language like C/C++, when we compile the program directly m/c code is generated which is understood by native OS.\
+ Machine code cannot be ported to other platforms. So there is platform dependency.\
+\
+ In Java running program is 2 step process\
+	1) Compilation - Source code -> Byte code (this is not m/c code)\
+	2) Interpretation- ByteCode(.class) -> M/c Code\
+\
+If we have to port Java program to other platforms, we can easily port byte code. Because Byte code is platform independent.\
+\
+Bytecode is understood by all JVM\'92s (irrespective of OS/platform). It\'92s JVM responsibility to convert byte code in m/c language.\
+\
+Cross Compilation : Program compiled on one m/c can run on other m/c. Java is cross-compiled lang. \
+WORA - Write once Run Anywhere. Java follows this idea. (Provided that versions are compatible)\
+\
+Java versions are backward compatible. \
+\
+	If we compile Java program with Java11 then it would work on any OS have Java version 11 or later. \
+	\
+	Program Compiled with 
+\f0\b Java 11
+\f1\b0  can run on multiple platform as below.\
+								v8	             v11        v17\
+		windows.       NO               Y           Y\
+		Linux             NO               Y           Y\
+		Mac OSX      NO               Y           Y\
+ 		Android 	      NO               Y           Y\
+\
+	Java is both - \'93
+\f0\b Compiled and Interpreted
+\f1\b0 \'94 lang.\
+\
+What is class?\
+- Class is an encapsulation of related things (properties + functions).\
+- It\'92s a blueprint of an object. \
+\
+	In Java we define class using \'93class\'94 keyword.\
+	Syntax: class <class-name>\
+\
+	e.g. class Employee \{ \}, class Student \{ \} \'85\
+\
+What is an object?\
+- Object is an 
+\f0\b instance
+\f1\b0  of a class.\
+- Object gives real meaning to the class.\
+\
+e.g. If you have a empty photo frame in the house - It\'92s a \'93class\'94. Once you put photo of someone (let\'92s say Sachin), it gives real identity to the photo frame. Now you can say it\'92s a photo frame of \'93Sachin\'94.\
+In this example - PhotoFrame is a class, Sachin\'92s photo is an object.\
+
+\f0\b \
+How we create object in Java?\
+- 
+\f1\b0 To create object in java we use \'93new\'94 operator. \
+Syntax:\
+					<Class-name> <obj-name> = new <Class-Name> ( );\
+				e.g. Employee e1 = new Employee( );\
+\
+
+\f0\b What all things class can consist of?\
+
+\f1\b0 We can have following in a class.\
+\
+- Properties (instance, static)\
+- Methods (instance, static)\
+- Constructor\
+- instance block\
+- static block\
+- inner class \
+
+\f0\b \
+Instance(non-static) v/s static properties:\
+
+\f1\b0 Instance properties - Properties of an object. e.g. \'93empId, empName\'94 in Employee class\
+We need an object/instance to access these properties.\
+\
+Static properties: Properties of a class. e.g \'93CompanyName\'94 in case of Employee (Assumption all employees are from same company).\
+We declare static properties using \'93static\'94 keyword.\
+e.g. static String companyName = \'93Wipro\'94;\
+We can access static properties directly using class name. (e.g. Employee.companyName)\
+\
+Can we access static property/function with object?\
+Yes. (But not recommended)\
+
+\f0\b \
+File Naming Rule:\
+- 
+\f1\b0 File name must be same as public class declared in the file.\
+- If you don\'92t have public class then this restriction is not there.\
+\
+e.g. \
+If you have to declare a class named \'93Student\'94 as public then it must be declared in \'93Student.java\'94 file (Name has to Student.java)\
+\
+Can we have more than one class in one file? Yes. (Not recommended)\
+\
+If we have 3 classes in one file and we compile the program how many classes(.class) will be generated. => 3 .class files \
+\
+
+\f0\b Is main() function mandatory?\
+
+\f1\b0 Yes. In entire project/application there MUST be one class consist of main() function. \
+
+\f0\b \
+main() function:\
+	public static void main(String[ ] args) \{ \'85. \} \
+- 
+\f1\b0 It is an entry point function from where JVM starts the execution.\
+- JVM calls main() function directly using class name and hence main() function is \'93static\'94\
+- We can pass arguments to main() function while using \'93java\'94 command. e.g. \
+	#java AdditionDemo 10 20\
+Here 10 and 20 are command line arguments which gets assigned to args[] array (Parameter of main() function)\
+- main() must be declared with \'93public\'94 access specifier, otherwise JVM would not access that.\
+- main() function does not return anything and hence return type is \'93void\'94 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
