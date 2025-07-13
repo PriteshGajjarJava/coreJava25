@@ -1,8 +1,13 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;\red41\green0\blue130;}
-{\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh21600\viewkind0
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red41\green0\blue130;\red0\green0\blue0;\red0\green0\blue255;
+\red255\green255\blue255;\red157\green0\blue210;\red32\green108\blue135;\red0\green0\blue109;\red101\green76\blue29;
+\red11\green90\blue180;\red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c100000;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c68627\c0\c85882;\cssrgb\c14902\c49804\c60000;\cssrgb\c0\c6275\c50196;\cssrgb\c47451\c36863\c14902;
+\cssrgb\c0\c43922\c75686;\cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh18420\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs68 \cf0 												                                Core Java
@@ -39,9 +44,11 @@ We have to download JDK. \
 	1) Compilation - Source code -> Byte code (this is not m/c code)\
 	2) Interpretation- ByteCode(.class) -> M/c Code\
 \
-If we have to port Java program to other platforms, we can easily port byte code. Because Byte code is platform independent.\
+If we have to port Java program to other platforms, we can easily port byte code. \
+Because Byte code is platform independent.\
 \
-Bytecode is understood by all JVM\'92s (irrespective of OS/platform). It\'92s JVM responsibility to convert byte code in m/c language.\
+Bytecode is understood by all JVM\'92s (irrespective of OS/platform). \
+It\'92s JVM responsibility to convert byte code in m/c language.\
 \
 Cross Compilation : Program compiled on one m/c can run on other m/c. Java is cross-compiled lang. \
 WORA - Write once Run Anywhere. Java follows this idea. (Provided that versions are compatible)\
@@ -145,7 +152,204 @@ Here 10 and 20 are command line arguments which gets assigned to args[] array (P
 - main() must be declared with \'93public\'94 access specifier, otherwise JVM would not access that.\
 - main() function does not return anything and hence return type is \'93void\'94 \
 \
+Object creation in Java:\
 \
+ - We use \'93new\'94 operator to create java object.\
+ - When we run Java program, by default we get memory (1/64th of RAM memory)\
+ - There are 2 types of memory - Stack and Heap\
+ - Object created using \'93new\'94 gets memory inside Heap area.\
+ \
+Reference v/s object:\
+- Reference is a variable which gets stored on stack and it points to an object created in heap memory. (Its a pointer)\
+- Object : Actual memory which gets created in Heap.\
+- Reference holds memory address of an object.\
+- Reference count : Number of references pointing to an object is called \'93Reference count\'94.\
+- Java tracks \'93Reference count\'94 of every object. Whenever count becomes 0, that object becomes eligible for \'93Garbage Collection\'94 process.\
+\
+Every function call we make -> New stack frame gets created in Stack memory.\
+All local variables declared in a function gets stored in stack memory.\
+Whenever function execution is done, stack frame gets deleted.\
+\
+\'93this\'94 keyword: \
+- It is a reference variable available in every instance function.\
+- It always refers to \'93Current object\'94 for which instance function is called.\
+- Using \'93this\'94 keyword we can access instance properties/functions.\
+- We cannot use \'93this\'94 keyword inside static functions.\
+\
+\
+\'93final\'94 Keyword:
+\f2\fs40 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs44 \cf0 \
+\cf4 \cb5 final\cf0  - variable \cf6 :\cf0  \cf7 Constat\cf0  \cb1 \
+\cf4 \cb5 final\cf0  - class.   \cf6 :\cf0  \cf7 Can\cf0  \cf8 NOT\cf0  \cf7 be\cf0  \cf9 inherited\cf0  (\cf4 final\cf0  class)\cb1 \
+\cf4 \cb5 final\cf0  - method   \cf6 :\cf0  \cf7 Can\cf0  \cf7 NOT\cf0  be overridden 
+\f1\fs72 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs68 \cf0 \
+Constructor:\
+	- Special method whose name is exactly same as \'93class name\'94.\
+	e.g. If class name is Student then constructor can be declared as below.\
+		\
+			class Student \{\
+               // constructor \
+				Student() \{ \}\
+			\}	\
+\
+	- It does NOT have return type\
+	- Constructor gets called automatically whenever we create an object of a class using \'93new\'94 operator.\
+	e.g. If we create 2 objects of Student then Student() constructor will be called 2 times.\
+\
+	- It is used to initialize instance properties of an object.\
+	\
+	- In Java, there are 2 types of constructor:\
+		1) Default constructor (non-arg constructor). \
+		2) Parameterised constructor \
+\
+	- By default if you do not write any constructor, JVM would provide default constructor. (Only when you don\'92t write any constructor)\
+\
+	- In case of inheritance, when we create object of child class -> 1st constructor of parent is called and then child class. (Constructor chaining)\
+\
+	- Constructor can be overloaded.\
+\
+	- In Java there is no copy constructor.\
+\
+\
+	- We can call our own constructor from our constructor only using \'93this()\'94 keyword. That call MUST be on 1st line.\
+e.g\
+	class Product \{\
+		prodcutName, mfg, price, color, qty \
+		discount \
+		offer \
+		\
+		Product(prodcutName, mfg, price, color, qty) \{\
+				this.productName = prodctName;\
+				\'85	\
+		\}\
+		Product(prodcutName, mfg, price, color, qty, discount) \{\
+			this(prodcutName, mfg, price, color, qty)\
+			this.discount = discount;\
+		\}\
+		Product(prodcutName, mfg, price, color, qty, offer) \{\}\
+		Product(prodcutName, mfg, price, color, qty, discount, offer) \{\}\
+	\}\
+\
+\
+	If we want string representation for our object instead of haschode(memory address), then we MUST override method \
+\'93public String toString( )\'94 from Object class.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs88 \cf0  
+\f2\fs44 \cf4 \cb5 \expnd0\expndtw0\kerning0
+class\cf0  \cf7 Student\cf0  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb5     \cf7 int\cf0  \cf8 id\cf0 ;\cb1 \
+\cb5     \cf7 String\cf0  \cf8 name\cf0 ;\cb1 \
+\cb5     \cf9 Student\cf0 () \{\cb1 \
+\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "Default cosntructor"\cf0 );\cb1 \
+\cb5     \}\cb1 \
+\cb5     \cf9 Student\cf0 (\cf7 int\cf0  \cf8 id\cf0 , \cf7 String\cf0  \cf8 name\cf0 ) \{\cb1 \
+\cb5         \cf4 this\cf0 (); \cf12 // Calling self constructor\cf0 \cb1 \
+\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "Parameterised constructor"\cf0 );\cb1 \
+\cb5         \cf4 this\cf0 .\cf8 id\cf0  = \cf8 id\cf0 ;\cb1 \
+\cb5         \cf4 this\cf0 .\cf8 name\cf0  = \cf8 name\cf0 ;\cb1 \
+\cb5     \}\
+	 // overriding Object method\cb1 \
+\cb5     \cf4 public\cf0  \cf7 String\cf0  \cf9 toString\cf0 () \{\cb1 \
+\cb5         \cf6 return\cf0  \cf4 this\cf0 .\cf8 id\cf0  + \cf11 ", "\cf0  + \cf4 this\cf0 .\cf8 name\cf0 ;\cb1 \
+\cb5     \}\cb1 \
+\cb5 \}\cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\fs68 \cf0 \kerning1\expnd0\expndtw0 \
+\'93static\'94 block: \
+	\
+	- It is a block inside class with keyword \'93static\'94 \
+	e.g\
+			static \{ \'85 \}\
+	\
+	- It gets executed only ONCE when class is loaded in memory by JVM.\
+\
+	- If class has main() function, static block will get called before main() function\
+	- Use of static block:\
+		a) One time logic related to class can be written in static block. (e.g DB initialization, Socket creation, Opening file etc)\
+		b) We can change entry point function using static block. \
+\
+	- We can have more than one static blocks. Order of execution is decided by sequence in which they are written.\
+\
+	- If class is NOT loaded in memory, then static block will not be executed.\
+\
+	Instance block:\
+\
+	- It is a block inside class, outside functions. (Without any keyword) \
+\
+	- It gets executed automatically, whenever object is created.\
+\
+	- It gets executed before constructor.\
+\
+	- Code which we want to execute on each object creation can go in instance block.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs104 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs60 \cf4 \cb5 \expnd0\expndtw0\kerning0
+public\cf0  \cf4 class\cf0  \cf7 Puzzle1\cf0  \{\cb1 \
+\cb5     \{ \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "ONE"\cf0 );\}\
+\cb1 \
+\cb5     \cf4 static\cf0  \{ \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "TWO"\cf0 );\}\
+\cb1 \
+\cb5     \cf4 public\cf0  \cf4 static\cf0  \cf7 void\cf0  \cf9 main\cf0 (\cf7 String\cf0 [] \cf8 args\cf0 ) \{\cb1 \
+\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "THREE"\cf0 );\cb1 \
+\cb5         \cf7 Puzzle1\cf0  \cf8 p2\cf0  = \cf6 new\cf0  \cf9 Puzzle1\cf0 ();\cb1 \
+\cb5     \}\cb1 \
+\cb5 \
+    \cf9 Puzzle1\cf0 () \{ \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "SIX"\cf0 );\}\cb1 \
+\cb5 \
+    \cf4 static\cf0  \{ \cf9 fun\cf0 (); \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "FOUR"\cf0 ); \}\cb1 \
+\cb5 \
+    \cf4 static\cf0  \cf7 void\cf0  \cf9 fun\cf0 () \{\cb1 \
+\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "FIVE"\cf0 );\cb1 \
+\cb5         \cf7 Puzzle1\cf0  \cf8 p1\cf0  = \cf6 new\cf0  \cf9 Puzzle1\cf0 ();\cb1 \
+\cb5     \}\cb1 \
+\cb5 \}
+\f3\b \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs42 \cf13 \kerning1\expnd0\expndtw0 \CocoaLigature0 TWO\
+FIVE\
+ONE\
+SIX\
+FOUR\
+THREE\
+ONE\
+SIX\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0\fs68 \cf0 \CocoaLigature1 	1) Write a function which takes number and returns its reverse.\
+		int reverse(int num) \{\
+			\'85 \
+		\}\
+	\
+	2) Check if number is Armstrong or not?\
+		153 \
+		1 + 125 + 27 =153 \
+\
+		boolean isArmstrong(int num) \{\
+				\'85 \
+		\}\
+\
+	3) Take n from user and print fibonacci  series.\
+		e.g. n = 10\
+		1 1 2 3 5 8 13 21 34 55\
+\
+		void printFibonacci(int n) \{\
+			\
+		\}\
 \
 \
 \
