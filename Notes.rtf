@@ -1,13 +1,14 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2822
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
-\f3\fnil\fcharset0 Menlo-Bold;}
-{\colortbl;\red255\green255\blue255;\red41\green0\blue130;\red0\green0\blue0;\red0\green0\blue255;
-\red255\green255\blue255;\red157\green0\blue210;\red32\green108\blue135;\red0\green0\blue109;\red101\green76\blue29;
-\red11\green90\blue180;\red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c100000;
-\cssrgb\c100000\c100000\c100000;\cssrgb\c68627\c0\c85882;\cssrgb\c14902\c49804\c60000;\cssrgb\c0\c6275\c50196;\cssrgb\c47451\c36863\c14902;
-\cssrgb\c0\c43922\c75686;\cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh18420\viewkind0
+\f3\fnil\fcharset0 Menlo-Bold;\f4\froman\fcharset0 Times-Roman;\f5\fmodern\fcharset0 Courier;
+\f6\fswiss\fcharset0 Helvetica-Oblique;}
+{\colortbl;\red255\green255\blue255;\red41\green0\blue130;\red0\green0\blue255;\red255\green255\blue255;
+\red157\green0\blue210;\red32\green108\blue135;\red0\green0\blue109;\red101\green76\blue29;\red11\green90\blue180;
+\red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c68627\c0\c85882;\cssrgb\c14902\c49804\c60000;\cssrgb\c0\c6275\c50196;\cssrgb\c47451\c36863\c14902;\cssrgb\c0\c43922\c75686;
+\cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh18380\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs68 \cf0 												                                Core Java
@@ -183,9 +184,9 @@ Whenever function execution is done, stack frame gets deleted.\
 \pard\pardeftab720\partightenfactor0
 
 \fs44 \cf0 \
-\cf4 \cb5 final\cf0  - variable \cf6 :\cf0  \cf7 Constat\cf0  \cb1 \
-\cf4 \cb5 final\cf0  - class.   \cf6 :\cf0  \cf7 Can\cf0  \cf8 NOT\cf0  \cf7 be\cf0  \cf9 inherited\cf0  (\cf4 final\cf0  class)\cb1 \
-\cf4 \cb5 final\cf0  - method   \cf6 :\cf0  \cf7 Can\cf0  \cf7 NOT\cf0  be overridden 
+\cf3 \cb4 final\cf0  - variable \cf5 :\cf0  \cf6 Constat\cf0  \cb1 \
+\cf3 \cb4 final\cf0  - class.   \cf5 :\cf0  \cf6 Can\cf0  \cf7 NOT\cf0  \cf6 be\cf0  \cf8 inherited\cf0  (\cf3 final\cf0  class)\cb1 \
+\cf3 \cb4 final\cf0  - method   \cf5 :\cf0  \cf6 Can\cf0  \cf6 NOT\cf0  be overridden 
 \f1\fs72 \cb1 \kerning1\expnd0\expndtw0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -244,25 +245,25 @@ e.g\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \fs88 \cf0  
-\f2\fs44 \cf4 \cb5 \expnd0\expndtw0\kerning0
-class\cf0  \cf7 Student\cf0  \{\cb1 \
+\f2\fs44 \cf3 \cb4 \expnd0\expndtw0\kerning0
+class\cf0  \cf6 Student\cf0  \{\cb1 \
 \pard\pardeftab720\partightenfactor0
-\cf0 \cb5     \cf7 int\cf0  \cf8 id\cf0 ;\cb1 \
-\cb5     \cf7 String\cf0  \cf8 name\cf0 ;\cb1 \
-\cb5     \cf9 Student\cf0 () \{\cb1 \
-\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "Default cosntructor"\cf0 );\cb1 \
-\cb5     \}\cb1 \
-\cb5     \cf9 Student\cf0 (\cf7 int\cf0  \cf8 id\cf0 , \cf7 String\cf0  \cf8 name\cf0 ) \{\cb1 \
-\cb5         \cf4 this\cf0 (); \cf12 // Calling self constructor\cf0 \cb1 \
-\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "Parameterised constructor"\cf0 );\cb1 \
-\cb5         \cf4 this\cf0 .\cf8 id\cf0  = \cf8 id\cf0 ;\cb1 \
-\cb5         \cf4 this\cf0 .\cf8 name\cf0  = \cf8 name\cf0 ;\cb1 \
-\cb5     \}\
+\cf0 \cb4     \cf6 int\cf0  \cf7 id\cf0 ;\cb1 \
+\cb4     \cf6 String\cf0  \cf7 name\cf0 ;\cb1 \
+\cb4     \cf8 Student\cf0 () \{\cb1 \
+\cb4         \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "Default cosntructor"\cf0 );\cb1 \
+\cb4     \}\cb1 \
+\cb4     \cf8 Student\cf0 (\cf6 int\cf0  \cf7 id\cf0 , \cf6 String\cf0  \cf7 name\cf0 ) \{\cb1 \
+\cb4         \cf3 this\cf0 (); \cf11 // Calling self constructor\cf0 \cb1 \
+\cb4         \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "Parameterised constructor"\cf0 );\cb1 \
+\cb4         \cf3 this\cf0 .\cf7 id\cf0  = \cf7 id\cf0 ;\cb1 \
+\cb4         \cf3 this\cf0 .\cf7 name\cf0  = \cf7 name\cf0 ;\cb1 \
+\cb4     \}\
 	 // overriding Object method\cb1 \
-\cb5     \cf4 public\cf0  \cf7 String\cf0  \cf9 toString\cf0 () \{\cb1 \
-\cb5         \cf6 return\cf0  \cf4 this\cf0 .\cf8 id\cf0  + \cf11 ", "\cf0  + \cf4 this\cf0 .\cf8 name\cf0 ;\cb1 \
-\cb5     \}\cb1 \
-\cb5 \}\cb1 \
+\cb4     \cf3 public\cf0  \cf6 String\cf0  \cf8 toString\cf0 () \{\cb1 \
+\cb4         \cf5 return\cf0  \cf3 this\cf0 .\cf7 id\cf0  + \cf10 ", "\cf0  + \cf3 this\cf0 .\cf7 name\cf0 ;\cb1 \
+\cb4     \}\cb1 \
+\cb4 \}\cb1 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\fs68 \cf0 \kerning1\expnd0\expndtw0 \
@@ -297,30 +298,30 @@ class\cf0  \cf7 Student\cf0  \{\cb1 \
 \fs104 \cf0 \
 \pard\pardeftab720\partightenfactor0
 
-\f2\fs60 \cf4 \cb5 \expnd0\expndtw0\kerning0
-public\cf0  \cf4 class\cf0  \cf7 Puzzle1\cf0  \{\cb1 \
-\cb5     \{ \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "ONE"\cf0 );\}\
+\f2\fs60 \cf3 \cb4 \expnd0\expndtw0\kerning0
+public\cf0  \cf3 class\cf0  \cf6 Puzzle1\cf0  \{\cb1 \
+\cb4     \{ \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "ONE"\cf0 );\}\
 \cb1 \
-\cb5     \cf4 static\cf0  \{ \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "TWO"\cf0 );\}\
+\cb4     \cf3 static\cf0  \{ \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "TWO"\cf0 );\}\
 \cb1 \
-\cb5     \cf4 public\cf0  \cf4 static\cf0  \cf7 void\cf0  \cf9 main\cf0 (\cf7 String\cf0 [] \cf8 args\cf0 ) \{\cb1 \
-\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "THREE"\cf0 );\cb1 \
-\cb5         \cf7 Puzzle1\cf0  \cf8 p2\cf0  = \cf6 new\cf0  \cf9 Puzzle1\cf0 ();\cb1 \
-\cb5     \}\cb1 \
-\cb5 \
-    \cf9 Puzzle1\cf0 () \{ \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "SIX"\cf0 );\}\cb1 \
-\cb5 \
-    \cf4 static\cf0  \{ \cf9 fun\cf0 (); \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "FOUR"\cf0 ); \}\cb1 \
-\cb5 \
-    \cf4 static\cf0  \cf7 void\cf0  \cf9 fun\cf0 () \{\cb1 \
-\cb5         \cf7 System\cf0 .\cf10 out\cf0 .\cf9 println\cf0 (\cf11 "FIVE"\cf0 );\cb1 \
-\cb5         \cf7 Puzzle1\cf0  \cf8 p1\cf0  = \cf6 new\cf0  \cf9 Puzzle1\cf0 ();\cb1 \
-\cb5     \}\cb1 \
-\cb5 \}
+\cb4     \cf3 public\cf0  \cf3 static\cf0  \cf6 void\cf0  \cf8 main\cf0 (\cf6 String\cf0 [] \cf7 args\cf0 ) \{\cb1 \
+\cb4         \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "THREE"\cf0 );\cb1 \
+\cb4         \cf6 Puzzle1\cf0  \cf7 p2\cf0  = \cf5 new\cf0  \cf8 Puzzle1\cf0 ();\cb1 \
+\cb4     \}\cb1 \
+\cb4 \
+    \cf8 Puzzle1\cf0 () \{ \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "SIX"\cf0 );\}\cb1 \
+\cb4 \
+    \cf3 static\cf0  \{ \cf8 fun\cf0 (); \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "FOUR"\cf0 ); \}\cb1 \
+\cb4 \
+    \cf3 static\cf0  \cf6 void\cf0  \cf8 fun\cf0 () \{\cb1 \
+\cb4         \cf6 System\cf0 .\cf9 out\cf0 .\cf8 println\cf0 (\cf10 "FIVE"\cf0 );\cb1 \
+\cb4         \cf6 Puzzle1\cf0  \cf7 p1\cf0  = \cf5 new\cf0  \cf8 Puzzle1\cf0 ();\cb1 \
+\cb4     \}\cb1 \
+\cb4 \}
 \f3\b \cb1 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\fs42 \cf13 \kerning1\expnd0\expndtw0 \CocoaLigature0 TWO\
+\fs42 \cf12 \kerning1\expnd0\expndtw0 \CocoaLigature0 TWO\
 FIVE\
 ONE\
 SIX\
@@ -351,11 +352,267 @@ SIX\
 			\
 		\}\
 \
+
+\f0\b \
+ String
+\f1\b0 \
+  \
+ - Array of characters.\
+ - It\'92s NOT a data type. It is a class from \'93java.lang\'94 package.\
+ - We can create String using 2 ways\
+		1) Using \'93new\'94 operator.\
+			String s1 = new String(\'93Java\'94);\
+\
+        2) Direct literal assignment:\
+			String s2 = \'93Java\'94.\
+ - String objects created using \'93new\'94 will always get new memory in Heap.\
+ - String objects created by assigning string literal goes in \'93String Literal Pool\'94.\
+
+\f0\b \
+What is String Literal Pool?
+\f1\b0 \
+- String is most commonly used class in Java and hence there is special memory optimization done for string storage.\
+String literal pool is collection of string which are created by assigning string literal directly.\
+\
+e.g. \
+String s1 = \'93Java\'94; // Goes in Literal Pool\
+String s2 = \'93Java\'94 ;// No new entry for this string as \'93Java\'94 string already exists in String literal pool.\
+\
+Both s1 and s2 will point to same entry in the string literal pool.\
+\
+
+\f0\b String objects are \'93immutable\'94:\
+ -
+\f4\b0\fs24 \expnd0\expndtw0\kerning0
+ 
+\f1\fs68 \kerning1\expnd0\expndtw0 Any modification done on string will result into new string.\
+ - We cannot change string contents directly, changes would always happen in new memory.\
+ e.g.\
+			String s1 = \'93Sunday\'94;\
+			s1.toUpperCase();   // Here we are NOT collecting the result. So whatever changes we have done using s1 will be lost.\
+			SOP(s1); // Sunday\
+\
+ex.2		String s2 = \'93Monday\'94;\
+			s2 = s2.toUpperCase();\
+			SOP(s2); // MONDAY\
+\
+Ex 3: \
+			String s1 = new String(\'93Java\'94);\
+			s1.toUpperCase( );\
+			sop(s1); // \'93Java\'94 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+	String Functions:
+\f1\b0 \
+\
+1) charAt  - To get particular char by giving it\'92s position.\
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs26 \cf0 \expnd0\expndtw0\kerning0
+ \
+
+\fs44    public\'a0char\'a0charAt(int\'a0index)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\fs68 \cf0 \kerning1\expnd0\expndtw0 \
+		String s1 = \'93Java\'94; // [\'91J\'92, \'91a\'92, \'91v\'92, \'91a\'92]\
+		char ch = s1.charAt(2); \
+		sop(ch); // v \
+\
+		s1.charAt(10);// StringIndexOutOfBoundsException will come at RUNTIME\
+\
+2) Length of String - 
+\f6\i length() \
+	
+\f5\i0\fs44 \expnd0\expndtw0\kerning0
+   public\'a0int\'a0length()
+\f6\i\fs68 \kerning1\expnd0\expndtw0 \
+	
+\f1\i0 String s1 = \'93Testing\'94;\
+	int len = s1.length( ); // 7 \
+	sop(len); \
+\
+3) How to get char[] from string?\
+	
+\f6\i toCharArray( )\
+	\
+	
+\f1\i0 String s1 = \'93Java\'94;\
+	char[] arr = s1.toCharArray(); // [\'91J\'92, \'91a\'92, \'91v\'92, \'91a\'92];\
+\
+4) Convert char[ ] into String -> Use Constructor with char[] as argument\
+ \
+	char[] arr = \{\'92S\'92, \'91u\'92, \'92n\'92\};\
+	String s1 = new String(arr); // \'93Sun\'94 \
+\
+5) Get index of particular char or substring:\
+		indexOf(char/string)\
+		lastIndexOf(char/string)\
+\
+		String s1 = \'93Jai Shri Ram\'94;\
+		s1.indexOf(\'91i\'92); // 2\
+		s1.indexOf(\'93hr\'94); // 5\
+\
+		s1.lastIndexOf(\'91i\'92); // 7\
+\
+		s1.indexOf(\'91z\'92); // -1 \
+\
+	If char/string not present - you will get output as 
+\f0\b -1 . 
+\f1\b0 This can be used to check if string/char exists.(Finder) \
+\
+6) How to get substring?\
+\
+	String s1 = \'93We are learning String\'94;\
+\
+	String s2 = s1.substring(8, 11); // \'93ear\'94 \
+	String s3 = s3.substring(7);// \'93learning String\'94\
+\
+7) Case conversion\
+	\
+	String toUpperCase( )\
+	String toLowerCase( )  \
+\
+	String s1 = \'93MySTring\'94;\
+	String s2 = s1.toUpperCase( );// MYSTRING\
+	String s3 = s1.toLowerCase( ); //mystring \
+\
+8) Check if particular word exists in string?\
+		\
+		boolean contains(word)	\
+		\
+	String s1 = \'93Learning Java\'94;\
+	boolean b1 = s1.contains(\'93ing\'94);// true\
+	boolean b2 = s1.contains(\'93pr\'94);// false\
+\
+9) IMP: Split/break the string\
+	String[] split(delimiter)\
+	\
+	String s1 = \'93Time to be serious now\'94;\
+	String[ ] words = s1.split(\'93 \'93); // [\'93Time\'94, \'93to\'94, \'93be\'94, \'93serious\'94, \'93now\'94]\
+\
+10) Joining back splited array into String\
+\
+	String[] words = \{\'93I\'94, \'93Like\'94, \'93String\'94\}\'92\
+	String s = String.join(\'93#\'94, words); // I#Like#String;;	\
+	join( ) is static function and hence called on String class.\
+\
+11) Trimming extra spaces from beginning and end.\
+\
+	String s1 = \'93   Java Program   \'93;\
+	s1 = s1.trim( ); // \'93Java Program\'94\
+\
+12) Concatenating string\
+		\
+	String s1 = \'93My\'94;\
+	String s2 = \'93Computer\'94;\
+	String s3 = s1.concat(s2); // MyComputer\
+	String s4 = s1+s2; //MyComputer\
+\
+13) startsWith( ) and endsWith() \
+\
+		String fileName = \'93Program1.java\'94;\
+		\
+		fileName.endsWith(\'93.java\'94);//true\
+		fileName.endsWith(\'93.py\'94);//false\
+\
+		fileName.starsWith(\'93Pro\'94);//true\
+		fileName.startsWith(\'93Str\'94);//false\
+\
+14) String comparison:\
+	\
+	String s1 = \'93Program\'94;\
+	String s2 = new String(\'93Program\'94);\
+	String s3 = \'93PROgRAM\'94;\
+	String s4 = \'93Program\'94;\
+\
+	sop(s1 == s2);\
+	sop(s1 == s4);\
+\
+	sop(s1.equals(s2));\
+	sop(s1.equals(s3));\
+\
+	sop(s1.equalsIgnoreCase(s3)); \
+\
+15) Check if String is empty or not\
+\
+		isEmpty() \
+	\
+		String s1 = \'93\'94;\
+		s1.isEmpty( );// true \
+\
+16) Replacing words within string\
+\
+		String s1 = \'93I have MyComputer icon on my Computer\'94;\
+\
+		String s2 = s1.replace(\'93Computer\'94, \'93Laptop\'94); // I have MyLaptop icon on my Laptop		String s3 = s1.replaceFirst(\'93Computer\'94, \'93PC\'94);// I have MyPC icon on my computer \
+\
+	\
+	
+\f0\b How to traverse String?
+\f1\b0 \
+\
+		1) String s1 = \'93Today is Saturday\'94;\
+\
+			for (int i = 0; i < s1.length( ); i++) \{\
+				char ch = s1.charAt(i); \
+				sop(ch);\
+			\} \
+\
+		2) Using for-each loop\
+			for(char ch : 
+\f0\b s1.toCharArray()
+\f1\b0 ) \{ sop(ch); \}\
+		\
+		3) First convert into array and then traverse array.\
+			char[] arr = s1.toCharArray();\
+			for(int i = 0 ; i < arr.length ; i++ )\{\
+				sop(arr[i]);\
+			\} \
+ \
+
+\f0\b \
+	Character wrapper class functions:\
+\
+		
+\f1\b0 Character.isDigit(\'91a\'92);//false\
+		Character.isDigit(\'915\'92);//true\
+		Character.isLettar(\'91z\'92);//true\
+\
+		Character.toUpperCase(\'91a\'92); // \'91A\'92\
+		Character.toLowerCase(\'91P\'92); // \'91p\'92\
+\
+		Character.isWhitespace(\'91\\t\'92);//true\
+\
+		Character.isUpperCase(\'91A\'92);//true\
+		Character.isLowerCase(\'91A\'92);//false  
+\f0\b 	
+\f1\b0 \
+		Character.getNumericValue(\'917\'92) ; // 7 \
+
+\f0\b \
+	StringBuffer, StringBuilder\
+\
+	- 
+\f1\b0 String objects are immutable, however StringBuffer, StringBuilder are mutable.\
+	- StringBuffer is 
+\f0\b synchronized
+\f1\b0 , StringBuilder is not synchronized \
+\
+	String s1 = \'93Hi\'94;					 // Hi\
+	String s1 = s1 + \'93 Hello\'94 
+\f0\b 	//
+\f1\b0 Hi Hello\
+	s1 + = \'93How are you\'94 // Hi Hello How are you\
+\
+	StringBuffer s1 = new StringBuffer(\'93hi\'94);\
+	s1.concat(\'93Hello\'94); // \
+\
+	s1 = Hi => Hi Hello\
 \
 \
-\
-\
-\
+	\'93String is one of the class in java. It is very important class. Objects gets stored on heap.\'94\
 \
 \
 \
