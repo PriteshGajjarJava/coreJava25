@@ -1,0 +1,18 @@
+import java.util.Optional;
+class OptionalClassDemo {
+    public static void main(String[] args) {
+        System.out.println(findLen("Pga"));
+        System.out.println(findLen(""));
+        System.out.println(findLen(null));
+    }
+
+    static Optional<Integer> findLen(String s) {
+        if (s == null) {
+            return Optional.ofNullable(null);
+        }
+        if (s.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(s.length());
+    }
+}

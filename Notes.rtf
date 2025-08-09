@@ -1,14 +1,20 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2822
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
 \f3\fnil\fcharset0 Menlo-Bold;\f4\froman\fcharset0 Times-Roman;\f5\fmodern\fcharset0 Courier;
-\f6\fswiss\fcharset0 Helvetica-Oblique;}
+\f6\fswiss\fcharset0 Helvetica-Oblique;\f7\fswiss\fcharset0 Helvetica-BoldOblique;}
 {\colortbl;\red255\green255\blue255;\red41\green0\blue130;\red0\green0\blue255;\red255\green255\blue255;
 \red157\green0\blue210;\red32\green108\blue135;\red0\green0\blue109;\red101\green76\blue29;\red11\green90\blue180;
-\red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;\red0\green0\blue0;}
+\red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;\red252\green83\blue8;\red217\green11\blue5;
+\red85\green142\blue40;\red133\green0\blue175;\red0\green0\blue0;\red63\green105\blue30;\red47\green180\blue29;
+\red180\green36\blue25;\red64\green11\blue217;\red46\green174\blue187;\red193\green101\blue28;\red110\green5\blue2;
+\red206\green59\blue5;\red74\green0\blue230;}
 {\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c100000;
 \cssrgb\c68627\c0\c85882;\cssrgb\c14902\c49804\c60000;\cssrgb\c0\c6275\c50196;\cssrgb\c47451\c36863\c14902;\cssrgb\c0\c43922\c75686;
-\cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww38200\viewh18380\viewkind0
+\cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;\cssrgb\c100000\c41713\c26;\cssrgb\c88946\c14202\c0;
+\cssrgb\c39975\c61335\c20601;\cssrgb\c59982\c16236\c74118;\cssrgb\c0\c0\c0;\cssrgb\c30831\c47797\c15540;\cssrgb\c20241\c73898\c14950;
+\cssrgb\c76411\c21697\c12527;\cssrgb\c32309\c18666\c88229;\cssrgb\c20199\c73241\c78251;\cssrgb\c80555\c47366\c13837;\cssrgb\c51239\c6511\c0;
+\cssrgb\c85233\c31565\c0;\cssrgb\c36820\c18688\c92265;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34060\viewh18080\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs68 \cf0 												                                Core Java
@@ -400,9 +406,8 @@ Ex 3: \
 			String s1 = new String(\'93Java\'94);\
 			s1.toUpperCase( );\
 			sop(s1); // \'93Java\'94 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b \cf0 \
+\f0\b \
 	String Functions:
 \f1\b0 \
 \
@@ -613,6 +618,293 @@ Ex 3: \
 \
 \
 	\'93String is one of the class in java. It is very important class. Objects gets stored on heap.\'94\
+
+\f0\b \
+Inheritance \
+\
+- 
+\f1\b0 It is OOP concept.\
+- Relationship between parent and child class, where child class inherits properties + functionalities from parent class.\
+- It represents \'93IS-A\'94 relationship\
+- It promotes \'93reusability\'94 principle of programming language \
+- We use \'93
+\f6\i extends\'94 
+\f1\i0 keyword to represent inheritance.\
+\
+Ex.\
+		Person is a parent class and Student is a child class.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs56 \cf0 	class Person \{\
+		String name;\
+		String address;\
+		char gender;\
+		int weight;\
+		\'85. \
+		void walk() \{\}\
+		void run() \{\}\
+		void eat() \{\}\
+		void sleep() \{\}\
+	\}\
+   \
+     class Student 
+\f0\b extends
+\f1\b0  Person \{\
+         int rollNo;\
+         float marks;\
+         String college;\
+         \'85 \
+         void study () \{ \}\
+         void giveExam( )\{ \}\
+     \}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs68 \cf0 - Parent class can have any number of children.\
+- \'93Object\'94 is parent class (root level class in the hierarchy) of all classes. (Topmost class in the hierarchy)\
+\
+Types of inheritance:\
+ 1) Single level inheritance \
+	  class A \{ \}\
+      class B extends A \{ \}\
+\
+ 2) Multilevel inheritance \
+	 class A \{ \}\
+     class B extends A \{ \}\
+     class C extends B \{ \}\
+\
+3) Hierarchical inheritance \
+    class A \{ \}\
+    class B extends A \{\}\
+    class C extends B \{ \}\
+    class D extends B \{ \}\
+\
+4) Multiple inheritance - 
+\f0\b Class having more than one parent. \cf13 Not possible with \'93classes\'94\cf0 , but possible with \'93interfaces\'94.\
+   
+\f1\b0 class A \{ \}\
+   class B \{\}\
+   class C extends A, B // \cf14 ERROR\cf0 \
+   \
+	interface A \{ \}\
+    interface B \{ \}\
+    class C 
+\f0\b implements
+\f1\b0  A, B \{ \} // \cf15 ALLOWED\cf0 \
+\
+
+\f0\b \
+ Method behavior in inheritance:\
+\
+ When child class inherits parent class, child has multiple options w.r.t parent method.\
+\
+	1) Child class Do NOT want to change behavior of parent method. Re-use parent method as is.\
+ 	2) Child class wants parent class method behavior + it wants to add it\'92s own behavior.\
+			
+\f6\i\b0 We will re-write parent class method and re-use parent class method behavior by calling 
+\f7\b super.fun ( ); \
+			
+\f6\b0 After super.fun() call, child class can add it\'92s own logic\
+	
+\f0\i0\b 3) Child class MUST add code for parent method. This is applicable, if method declared in parent class is \'93abstract method\'94.\
+		In case of abstract method, it\'92s mandatory for child class to provide function definition \
+\
+	4) Child class do NOT want to re-use parent method, but wanted to define same method with different code.\
+		
+\f6\i\b0 Child class can re-write parent class method in its own way.\
+
+\f0\i0\b \
+Ex.\
+			abstract  class A \{	\
+				void f1 ( ) \{ \}\
+               void f2 ( ) \{ \}\
+               abstract void f3( );\
+               void f4( ) \{ SOP(\'931\'94); \}\
+			\}
+\f1\b0 \
+			\cf16 class B extends A \{\
+					// f1( ) - I am ok with parent method. Not adding\
+					\cf17 void f2( ) \{\
+						super.f2( );\
+                       \'85. //own logic\
+					\}\
+                   void f3 () \{ \'85 \}\
+                   void f4 ( ) \{ SOP(\'932\'94) \} \cf16 \
+            \}\cf0 \
+\
+
+\f0\b Method Overloading:\
+
+\f1\b0 - It is compile-time polymorphism.\
+- Method overloading means same function name and change in parameters (one of the following)\
+a) Count of parameter\
+b) Types of parameters\
+c) Sequence of parameters.\
+- It does NOT depend on return type or name of parameters\
+- We can overload all types of functions (constructor, instance functions, static functions etc)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf18 - It is called \'93compile-time\'94 polymorphism, because decision of which overloaded method to be called is taken at \
+Compile time.
+\f1\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+
+\f0\b var-arg list ( \'85 )\
+\
+
+\f1\b0 If we have requirement of having only one function which can work with zero or more arguments of same type,\
+then we can use var-arg list (\'85).\
+\
+- Internally it\'92s an 
+\f0\b array
+\f1\b0  \
+\
+e.g. We have to write single add( ) function which can do addition of 0 to n numbers.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs46 \cf19 \CocoaLigature0 class\cf12  Addition \{\
+    \cf19 public\cf12  \cf19 static\cf12  \cf19 void\cf12  main(String[] args) \{\
+        System.out.println(add(\cf20 1\cf12 ,\cf20 2\cf12 ));\
+        System.out.println(add(\cf20 5\cf12 ,\cf20 6\cf12 ,\cf20 7\cf12 ,\cf20 8\cf12 ));\
+        System.out.println(add(\cf20 1\cf12 ,\cf20 2\cf12 ,\cf20 3\cf12 ,\cf20 4\cf12 ,\cf20 5\cf12 ,\cf20 6\cf12 ,\cf20 7\cf12 ,\cf20 8\cf12 ,\cf20 9\cf12 ,\cf20 10\cf12 ));\
+        System.out.println(add());\cf21 //0\cf12 \
+    \}\
+\
+    \cf21 //... Var argument list\cf12 \
+    \cf19 static\cf12  \cf19 int\cf12  add(\cf19 int\cf22 ...\cf12  arr) \{\
+        \cf19 int\cf12  sum = \cf20 0\cf12 ;\
+        \cf23 for\cf12 (\cf19 int\cf12  i=\cf20 0\cf12 ; i<arr.length; i++) \{\
+            sum = sum + arr[i];\
+        \}\
+        \cf23 return\cf12  sum;\
+    \}\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\fs68 \cf0 \CocoaLigature1 \
+
+\f0\b Limitations
+\f1\b0 :\
+- We can NOT have more than one argument of this type in one function.\
+e.g. add(int \'85a, String \'85b) \{\} Invalid\
+- If we have other normal parameters and want to add var-arg parameter, then it MUST be last argument.\
+e.g.\
+		fun (String a, int b, int \'85 c) \{ \}// valid\
+        fun (int \'85 a, int b, String c ) \{ \}// invalid\
+\
+
+\f0\b Run-time Polymorphism:\
+\
+	- 
+\f1\b0 Method Overriding is an example of run-time polymorphism.\
+   \
+What is Method overriding?\
+- In case of inheritance, child class has an option of providing different behavior for parent class method by rewriting method with same declaration as of parent.\
+e.g.\
+				class Electronics \{\
+						public void on( ) \{ // Switch on the button \}\
+				\}\
+				class Fan \{\
+					public void on( ) \{\
+						super.on( );// \
+						//logic of adjusting Regulator\
+					\}\
+				\}\
+\
+- Child class 
+\f0\b MUST 
+\f1\b0 keep same declaration as of parent. \
+- Can child class change access specifier of a parent method?\
+YES. Child class can increase the scope (But can not decrease the scope).\
+e.g.\
+			If parent class method is with \'93default\'94 access specifier(no access specifier). Now child class can have 3 choices keep the child class method as default(no access specifier), protected or public. \
+\
+			If parent class method is \'93public\'94(highest scope), child class must keep scope as public.\
+Order of access specifier from lowest(strict) to highest (most friendly) is \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f6\i \cf16 private, default(no access specifier), protected, public 
+\f1\i0 \cf0 \
+\
+- Following methods 
+\f0\b \cf24 cannot
+\f1\b0 \cf0  be overridden.\
+		a) static methods\
+		b) constructor\
+		c) final methods\
+		d) private methods \
+\
+Runtime polymorphism:\
+In case of method overriding decision of which method (parent/chid) to be called is taken at RUNTIME and hence method overriding is considered as runtime polymorphism.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 UpCasting vs/ Downcasting:\
+
+\f1\b0 In Java, we can assign object of child class to parent reference and this is called as \'93Upcasting\'94. \cf15 (We can go UP in the hierarchy)\cf0 \
+\
+Down-casting - Assigning object of parent class to child reference is called down casting. Which is NOT allowed in Java.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf25 (We can NOT go down in the hierarchy)\cf0 \
+\
+\
+\
+	class A \{\
+		private void f1() \{ sop(\'93A:f1\'94);\
+		main ( ) \{\
+			A obj = new B( );\
+			obj.f1( );\
+		\}\
+	\}\
+	class B extends A \{\
+		private void f1() \{ sop(\'93B:f1\'94);\
+	\}\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Abstract class:\
+\
+- 
+\f1\b0 Abstract class is declared with \'93abstract\'94 keyword which can consist of abstract + non-abstract methods.\
+- If we need to have abstract method inside class, then class MUST be declared as abstract.\
+- Abstract class can exist without abstract methods.\
+- What is abstract method?\
+	A method with keyword abstract, which has only signature (declaration), no definition and it ends with semicolon (;)\
+	e.g.\
+			\cf26 abstract void changeGear( ); \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf17 -\cf0  Abstract class can NOT be instantiated. We can NOT create object of abstract class directly.\
+- It can have properties, constructor like regular class.\
+- Constructor of abstract class will be called when child object is created.\
+- Child class which inherits abstract class MUST provide definition of abstract method written in abstract class.\
+- If for some reason, child class can not provide definition for abstract method, then child class also needs to be declared as abstract class.\
+\
+What is use of abstract class?\
+When you want to mandate(forcefully) child class to provide definition of some methods then you declare abstract class with abstract methods.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+Interface \
+\
+	- 
+\f1\b0 It is a type which consist of constants and abstract methods.\
+	- All 
+\f0\b \
+
+\f1\b0 \
+ \
+\
+
+\f0\b \
+Java 8 Features:\
+1) Optional class\
+It is a class which used to handle null values safety (To avoid NullPointerException)
+\f1\b0 \
+\
+\
+\
+\
 \
 \
 \
