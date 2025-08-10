@@ -7,14 +7,16 @@
 \red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;\red252\green83\blue8;\red217\green11\blue5;
 \red85\green142\blue40;\red133\green0\blue175;\red0\green0\blue0;\red63\green105\blue30;\red47\green180\blue29;
 \red180\green36\blue25;\red64\green11\blue217;\red46\green174\blue187;\red193\green101\blue28;\red110\green5\blue2;
-\red206\green59\blue5;\red74\green0\blue230;}
+\red206\green59\blue5;\red74\green0\blue230;\red252\green112\blue56;\red155\green44\blue3;\red85\green142\blue40;
+}
 {\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c100000;
 \cssrgb\c68627\c0\c85882;\cssrgb\c14902\c49804\c60000;\cssrgb\c0\c6275\c50196;\cssrgb\c47451\c36863\c14902;\cssrgb\c0\c43922\c75686;
 \cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;\cssrgb\c100000\c41713\c26;\cssrgb\c88946\c14202\c0;
 \cssrgb\c39975\c61335\c20601;\cssrgb\c59982\c16236\c74118;\cssrgb\c0\c0\c0;\cssrgb\c30831\c47797\c15540;\cssrgb\c20241\c73898\c14950;
 \cssrgb\c76411\c21697\c12527;\cssrgb\c32309\c18666\c88229;\cssrgb\c20199\c73241\c78251;\cssrgb\c80555\c47366\c13837;\cssrgb\c51239\c6511\c0;
-\cssrgb\c85233\c31565\c0;\cssrgb\c36820\c18688\c92265;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww34060\viewh18080\viewkind0
+\cssrgb\c85233\c31565\c0;\cssrgb\c36820\c18688\c92265;\cssrgb\c100000\c52407\c27938;\cssrgb\c67803\c24280\c0;\cssrgb\c39975\c61335\c20601;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh18080\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs68 \cf0 												                                Core Java
@@ -902,11 +904,138 @@ Java 8 Features:\
 It is a class which used to handle null values safety (To avoid NullPointerException)
 \f1\b0 \
 \
+
+\f0\b \
+Exception Handling:
+\f1\b0 \
+\
+Exceptions are \'93Runtime errors\'94, whenever it occurs it terminates the program.\
+\
+Exception handling does not mean solving that problem, it helps to continue the execution.\
+\
+
+\f0\b  try block, catch block, finally block, throw keyword, throws keyword	\
+1) try block\
+	It is a block where we will add code which has possibility of an exception.\
+	Guideline is to keep minimum lines in one try block.\
+\
+
+\f1\b0 	try \{\
+			line 1\
+			line 2\
+			
+\f0\b \cf27 line 3 Exception occurs 
+\f1\b0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf28 			line 4\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 	\} catch (Exception e) \{\
+		\cf29 	//handling\'85 \cf0 \
+	 \} \
+\cf29     line5\
+    line6\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 2) catch block
+\f1\b0 \cf29  \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf29 	\cf0 We can have one ore more catch blocks for one try block.\
+	\'93catch\'94 block gets executed only when exception occurs.\
+	If there are multiple catch blocks, JVM would find most appropriate one and execute only one catch blocks.\
+\
+	If exception doesn\'92t occur, then catch block will NOT be executed.\
+\
+
+\f0\b 3) finally block \
+	
+\f1\b0 We can have one finally block with \'93try\'94 or \'93try-catch\'94.\
+	It is a block which gets executed in both cases - Exception occurs or doesn\'92t occur.\
+	Generally cleanup logic (like closing socket, db connection, closing file) is written inside \'93finally\'94 block\
+\
+	\'93finally\'94 block will NOT be executed if \'93System.exit(0)\'94 is encountered before reaching finally block.\
+
+\f0\b \
+Possible combinations of try-catch-finally:\
+ 
+\f1\b0 try - catch\
+ try - multiple catch blocks\
+ try - finally\
+ try - catch - finally \
+ try - multiple catch - finally \cf29 \
+
+\f0\b \cf0 \
+Exception classes hierarchy:\
+
+\f1\b0 Parent of all exception classes is \'93Throwable\'94.\
+There are 2 child classes of it - Error, Exception.\
+\
+
+\f0\b \
+\
+Types of Exceptions\
+a) Checked Exceptions\
+
+\f1\b0 - These are critical exceptions which compiler enforces to handle.\
+- Parent of these exceptions is \'93Exception\'94 class.\
+e.g. FileNotFoundException, SQLException, IOException etc.\
+\
+	void f1 ( ) throws IOException \{ \}\
+	If we have to call f1( ) then, we require to handle the IOException or else we also need to ignore it by using \'93throws\'94.\
+\
+	option1)\
+		main() \{\
+			try \{ f1(); \} catch(IOException e) \{ \}\
+		\}\
+\
+     Option2)\
+		main( ) throws IOException \{ \
+			f1();\
+		\}\
+
+\f0\b \
+b) UnChecked exceptions:\
+ - 
+\f1\b0 Parent of these classes is \'93RuntimeException\'94.\
+ - These are not mandatory to handle. Compiler does NOT enforce to handle these exceptions.\
+ e.g. NullPointerException, ArithmeticException, NumberFormatException, ArrayIndexOutOfBoundsException etc.\
+\
+ 
+\f0\b \'93throws\'94 keyword \
+-  
+\f1\b0 It is used with method signature.\
+- Using throws keyword we can indicate outside world about possibility of an exception.\
+- It is generally used to specify checked exceptions.\
+- We can have multiple exceptions after throws.\
+\
+	void f1 ( ) throws SQLException \{ \'85 \}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 	void f1 ( ) throws SQLException, IOException \{ \'85 \}
+\f0\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+ \'93throw\'94 keyword:\
+
+\f1\b0  - \'93throw\'94 keyword is used to throw an exception explicitly.\
+ - By default, when JVM encounters an exception at run-time it creates an object of exception and throw that object.\
+ - Using \'93throw\'94 we can throw an exception programmatically.\
+ - This is mostly used for throwing user-defined exceptions.\
+\
+	e.g.\
+				class InvalidATMPinException extends Exception  \{  \} // This is user-defined exception\
+				isPinValid ( String pin) \{\
+                   if (pin.length != 4) \{ throw new InvalidATMPinException(); \}\
+				\}
+\f0\b \
 \
 \
 \
 \
 \
+\
+\
+
+\f1\b0 \
 \
 \
 \
