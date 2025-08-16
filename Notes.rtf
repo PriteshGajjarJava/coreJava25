@@ -7,16 +7,14 @@
 \red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;\red252\green83\blue8;\red217\green11\blue5;
 \red85\green142\blue40;\red133\green0\blue175;\red0\green0\blue0;\red63\green105\blue30;\red47\green180\blue29;
 \red180\green36\blue25;\red64\green11\blue217;\red46\green174\blue187;\red193\green101\blue28;\red110\green5\blue2;
-\red206\green59\blue5;\red74\green0\blue230;\red252\green112\blue56;\red155\green44\blue3;\red85\green142\blue40;
-}
+\red206\green59\blue5;\red74\green0\blue230;\red252\green112\blue56;\red155\green44\blue3;}
 {\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c100000;
 \cssrgb\c68627\c0\c85882;\cssrgb\c14902\c49804\c60000;\cssrgb\c0\c6275\c50196;\cssrgb\c47451\c36863\c14902;\cssrgb\c0\c43922\c75686;
 \cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;\cssrgb\c100000\c41713\c26;\cssrgb\c88946\c14202\c0;
 \cssrgb\c39975\c61335\c20601;\cssrgb\c59982\c16236\c74118;\cssrgb\c0\c0\c0;\cssrgb\c30831\c47797\c15540;\cssrgb\c20241\c73898\c14950;
 \cssrgb\c76411\c21697\c12527;\cssrgb\c32309\c18666\c88229;\cssrgb\c20199\c73241\c78251;\cssrgb\c80555\c47366\c13837;\cssrgb\c51239\c6511\c0;
-\cssrgb\c85233\c31565\c0;\cssrgb\c36820\c18688\c92265;\cssrgb\c100000\c52407\c27938;\cssrgb\c67803\c24280\c0;\cssrgb\c39975\c61335\c20601;
-}
-\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh18080\viewkind0
+\cssrgb\c85233\c31565\c0;\cssrgb\c36820\c18688\c92265;\cssrgb\c100000\c52407\c27938;\cssrgb\c67803\c24280\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh21300\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs68 \cf0 												                                Core Java
@@ -930,17 +928,17 @@ Exception handling does not mean solving that problem, it helps to continue the 
 \cf28 			line 4\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 	\} catch (Exception e) \{\
-		\cf29 	//handling\'85 \cf0 \
+		\cf15 	//handling\'85 \cf0 \
 	 \} \
-\cf29     line5\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf15     line5\
     line6\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b \cf0 2) catch block
-\f1\b0 \cf29  \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf29 	\cf0 We can have one ore more catch blocks for one try block.\
+\f1\b0 \cf15  \
+	\cf0 We can have one ore more catch blocks for one try block.\
 	\'93catch\'94 block gets executed only when exception occurs.\
 	If there are multiple catch blocks, JVM would find most appropriate one and execute only one catch blocks.\
 \
@@ -962,7 +960,7 @@ Possible combinations of try-catch-finally:\
  try - multiple catch blocks\
  try - finally\
  try - catch - finally \
- try - multiple catch - finally \cf29 \
+ try - multiple catch - finally \cf15 \
 
 \f0\b \cf0 \
 Exception classes hierarchy:\
@@ -1009,11 +1007,9 @@ b) UnChecked exceptions:\
 - We can have multiple exceptions after throws.\
 \
 	void f1 ( ) throws SQLException \{ \'85 \}\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 	void f1 ( ) throws SQLException, IOException \{ \'85 \}
+	void f1 ( ) throws SQLException, IOException \{ \'85 \}
 \f0\b \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
+\
  \'93throw\'94 keyword:\
 
 \f1\b0  - \'93throw\'94 keyword is used to throw an exception explicitly.\
@@ -1028,7 +1024,137 @@ b) UnChecked exceptions:\
 				\}
 \f0\b \
 \
+MultiThreading\
 \
+
+\f1\b0 Memory types:\
+1) Primary Memory (RAM) - Volatile in nature (temporary storage)\
+2) Secondary Memory (HDD, Pen Drive, CD-ROM etc) - Permanent storage\
+\
+Program: Set of instructions. (Stored on secondary memory)\
+\
+Process : Running instance of a program. (Stored on primary memory)\
+\
+Who executes process?\
+CPU execute process instruction one by one from primary memory. Because primary memory is faster than secondary memory.\
+\
+Context switch:\
+When CPU(processor) switches from one process to another process, it is called as Context Switch.\
+\
+
+\f0\b What is Thread?\
+- 
+\f1\b0 It is a lightweight process.\
+- Thread is created from a process. (It is child of process)\
+- For performing any independent task we can create thread from process.\
+- It doesn\'92t get separate memory, it shares memory from process. However it has its own stack.\
+ 
+\f0\b \
+How to create Threads in Java?\
+
+\f1\b0 There are 2 ways of creating threads in Java.\
+\
+1) Using \'93extends Thread\'94\
+2) Using \'93implements Runnable\'94\
+\
+ In both options, we have to add method \'93public void run( )\'94 inside a class.\
+\
+ - To start a thread we have to call method \'93start()\'94 which belongs to \'93Thread\'94 class.\
+
+\f0\b  - 
+\f1\b0 start( ) method takes care of creating new thread (memory allocation, stack creation etc)\
+ \
+Who calls run() method?\
+ start( ) method internally calls run( ) method after new thread is created.\
+\
+Can we call run( ) directly?\
+Yes. But it won\'92t create new thread. It will get executed on \'93main\'94 thread.\
+
+\f0\b \
+How to start thread with both options?\
+1) For \'93extends Thread\'94\
+
+\f1\b0    DownloadThread t1 = new DownloadThread();\
+   t1.start( );\
+\
+2) 
+\f0\b For \'93implements Runnable\'94\
+   
+\f1\b0 UploadThread job = new UploadThread( );\
+	
+\f0\b Thread t2 = new Thread(job);\
+    
+\f1\b0 t2.start( );
+\f0\b \
+\
+\
+	Inter-thread communication:\
+	\
+	
+\f1\b0 In Multi-threading there will be situation where dependency can exists between threads.\
+\
+	There are 2 ways to handle inter-thread communication(dependency) \
+	1) Using \'93join( )\'94 method - 
+\f6\i used when current thread depends on 
+\f7\b COMPLETE
+\f6\b0  execution of another thread.\
+
+\f1\i0     2)
+\f6\i  
+\f1\i0 Using \'93wait()/notify()/notifyAll()\'94 - These methods are of \'93Object\'94 class. Used when dependency is there for limited logic.\
+			Here waiting thread calls wait() and notifying thread calls notify( ).\
+ \
+	join( ) method:\
+    It is a method of \'93Thread\'94 class. \
+	Current thread waits for complete execution of a thread on which join( ) is called.
+\f0\b \
+	
+\f2\b0\fs48 \cf12 \CocoaLigature0 InterruptedException needs to be handled when we call join ( ) method.\
+Example of join( ) \
+WAP which does addition of 100 numbers, where addition is done by 10 different threads.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs50 \cf19 class\cf12  AdditionDemo \{\
+    \cf21 // 1 to 100 numbers addition\cf12 \
+    \cf19 public\cf12  \cf19 static\cf12  \cf19 void\cf12  main(String[] args) \{\
+        AdditionThread t[] = \cf23 new\cf12  AdditionThread[\cf20 10\cf12 ];\
+        \cf23 for\cf12  (\cf19 int\cf12  i=\cf20 0\cf12 ; i < \cf20 10\cf12 ; i++) \{\
+            t[i] = \cf23 new\cf12  AdditionThread(i*\cf20 10\cf12 +\cf20 1\cf12 , i*\cf20 10\cf12 +\cf20 10\cf12 );\
+            t[i].start();\
+            \cf23 try\cf12  \{\
+                t[i].join();\
+            \}\cf23 catch\cf12 (InterruptedException e) \{\}\
+        \}\
+\
+        \cf21 // ask all thread about their output\cf12 \
+        \cf19 int\cf12  sum=\cf20 0\cf12 ;\
+        \cf23 for\cf12  (\cf19 int\cf12  i=\cf20 0\cf12 ; i<\cf20 10\cf12 ; i++)\{\
+            sum = sum + t[i].ans;\
+        \}\
+        SOP(\cf20 \'93Final sum: "\cf12  + sum);\
+    \}\
+\}
+\fs40 \
+
+\fs50 \cf19 class\cf12  AdditionThread \cf19 extends\cf12  Thread \{\
+  \cf19 int\cf12  start; \cf19 int\cf12  end; \cf19 int\cf12  ans;\
+\
+  AdditionThread(\cf19 int\cf12  start, \cf19 int\cf12  end) \{\
+    \cf19 this\cf12 .start = start; \cf19 this\cf12 .end = end;\
+  \}\
+  \cf19 public\cf12  \cf19 void\cf12  run() \{\
+    SOP(\cf20 "Starting thread: "\cf12  + Thread.currentThread().getName());\
+    \cf23 for\cf12  (\cf19 int\cf12  i=\cf19 this\cf12 .start; i<=\cf19 this\cf12 .end;i++) \{\
+        \cf19 this\cf12 .ans = \cf19 this\cf12 .ans + i;\
+    \}\
+  \}\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs68 \cf0 \CocoaLigature1 \
+ \
 \
 \
 \
