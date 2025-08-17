@@ -7,14 +7,16 @@
 \red144\green1\blue18;\red15\green112\blue1;\red0\green0\blue0;\red252\green83\blue8;\red217\green11\blue5;
 \red85\green142\blue40;\red133\green0\blue175;\red0\green0\blue0;\red63\green105\blue30;\red47\green180\blue29;
 \red180\green36\blue25;\red64\green11\blue217;\red46\green174\blue187;\red193\green101\blue28;\red110\green5\blue2;
-\red206\green59\blue5;\red74\green0\blue230;\red252\green112\blue56;\red155\green44\blue3;}
+\red206\green59\blue5;\red74\green0\blue230;\red252\green112\blue56;\red155\green44\blue3;\red9\green60\blue148;
+}
 {\*\expandedcolortbl;;\cssrgb\c21681\c10251\c58230;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c100000;
 \cssrgb\c68627\c0\c85882;\cssrgb\c14902\c49804\c60000;\cssrgb\c0\c6275\c50196;\cssrgb\c47451\c36863\c14902;\cssrgb\c0\c43922\c75686;
 \cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;\csgray\c0;\cssrgb\c100000\c41713\c26;\cssrgb\c88946\c14202\c0;
 \cssrgb\c39975\c61335\c20601;\cssrgb\c59982\c16236\c74118;\cssrgb\c0\c0\c0;\cssrgb\c30831\c47797\c15540;\cssrgb\c20241\c73898\c14950;
 \cssrgb\c76411\c21697\c12527;\cssrgb\c32309\c18666\c88229;\cssrgb\c20199\c73241\c78251;\cssrgb\c80555\c47366\c13837;\cssrgb\c51239\c6511\c0;
-\cssrgb\c85233\c31565\c0;\cssrgb\c36820\c18688\c92265;\cssrgb\c100000\c52407\c27938;\cssrgb\c67803\c24280\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh21300\viewkind0
+\cssrgb\c85233\c31565\c0;\cssrgb\c36820\c18688\c92265;\cssrgb\c100000\c52407\c27938;\cssrgb\c67803\c24280\c0;\cssrgb\c1569\c31765\c64706;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh18080\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs68 \cf0 												                                Core Java
@@ -1151,6 +1153,74 @@ WAP which does addition of 100 numbers, where addition is done by 10 different t
     \}\
   \}\
 \}\
+
+\fs68 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b\fs46 \cf0 \cb4 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec17 "Thread Safety"\cb1 \
+
+\f2\b0 \
+\cf29 \cb4 \strokec29 -\cf0 \strokec17  If your class methods are used by any thread, you have to make sure that your class is "Thread-safe" class.\cb1 \
+\cf29 \cb4 \strokec29 \
+-\cf0 \strokec17  In class we can have either read/write methods.\cb1 \
+\cf29 \cb4 \strokec29 \
+-\cf0 \strokec17  We need to apply thread safety on "write" methods.\cb1 \
+\cf29 \cb4 \strokec29 \
+-\cf0 \strokec17  If we do not apply thread safety, multiple thread can perform critical operation on same object which can result into inconsistent data.(wrong data)\cb1 \
+\
+
+\f3\b \cb4 How to apply thread safety?\cb1 \
+
+\f2\b0 \cb4 Solution is "synchronized" keyword.\cb1 \
+\
+
+\f3\b \cb4 "synchronized" keyword can be applied at 2 places.\cb1 \
+
+\f2\b0 \cb4 a) At method level\cb1 \
+\cb4 b) Inside method using "synchronized" block.\cb1 \
+\
+\cb4 e.g.\cb1 \
+\cb4   synchronized void f1() \{\}  // synchronized method \cb1 \
+\cb4   void f2\{\cb1 \
+\cb4     ....\cb1 \
+\cb4     synchronized(this) \{ // synchronized block\cb1 \
+\cb4       // critical code\cb1 \
+\cb4     \}\cb1 \
+\cb4     ...\cb1 \
+\cb4   \}\cb1 \
+\
+\cb4 To enter into synchronized block/method, a thread needs to acquire a lock on an object. Once lock is applied on an object,\cb1 \
+\cb4 another thread can NOT enter into method/block unless it is completely executed.\
+\cb1 \
+\cb4 If two threads are entering into synchronized methods via two different objects, then there is no safety issue. Both can run in parallel.\cb1 \
+\
+\cb4 Synchronization is solution to achieve thread safety, with that Java will NOT allow multiple threads to execute critical operation on SAME object.\cb1 \
+
+\fs42 \
+\
+\
+\
+\
+\
+\
+\
+
+\f3\b\fs58 \cb4 **Object and class level locking: **\cb1 \
+
+\f2\b0\fs54 \
+\cb4   \cf29 \strokec29 -\cf0 \strokec17  To enter into instance synchronized method JVM applies lock on "object". (Object level lock)\cb1 \
+\cb4   \cf29 \strokec29 -\cf0 \strokec17  To enter into static synchronized method JVM applied lock on a "class". (Class level lock)\cb1 \
+\cb4   \cf29 \strokec29 -\cf0 \strokec17  There is NO relation between object level lock and class level lock. Both can co-exists.\cb1 \
+\cb4   \cf29 \strokec29 -\cf0 \strokec17  Lock is applied only for synchronized methods/block.\cb1 \
+\cb4   \cf29 \strokec29 -\cf0 \strokec17  If lock is applied on an object (e.g. account1), then any other thread want to do critical operation on same account1 will be blocked. Another thread will go in waiting queue. Once current thread's critical operation is over, thread2 will get a chance.\cb1 \
+
+\fs42 \
+
+\fs24 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs50 \cf12 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs68 \cf0 \CocoaLigature1 \
@@ -1162,6 +1232,10 @@ WAP which does addition of 100 numbers, where addition is done by 10 different t
 \
 
 \f1\b0 \
+\
+\
+\
+\
 \
 \
 \
